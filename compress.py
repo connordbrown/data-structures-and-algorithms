@@ -13,3 +13,10 @@ def compress(s):
         output += str(j - i) + s[i]
       i = j
   return output
+
+
+assert compress('ccaaatsss') == '2c3at3s'
+assert compress('ssssbbz') == '4s2bz'
+assert compress('ppoppppp') == '2po5p'
+assert compress('nnneeeeeeeeeeeezz') == '3n12e2z'
+assert compress('yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy') == '127y'
