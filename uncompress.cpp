@@ -22,6 +22,7 @@ std::string uncompress(std::string s) {
 
 int main() {
 
+    // could write testing wrapper function to indicate error
     std::cout << (uncompress("2c3a1t") == "ccaaat") << std::endl;
     std::cout << (uncompress("4s2b") == "ssssbb") << std::endl;
     std::cout << (uncompress("2p1o5p") == "ppoppppp") << std::endl;
