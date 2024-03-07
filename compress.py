@@ -2,18 +2,18 @@ def compress(s):
   s += '!' # dummy character to indicate change
   i = 0 # current index
   j = 0 # count
-  output = ""
+  output = []
   while (j < len(s)):
     if s[j] == s[i]:
       j += 1
     else:
       if j - i == 1:
-        output += s[i]
+        output.append(s[i])
       else:
-        output += str(j - i) + s[i]
+        output.append(str(j - i))
+        output.append(s[i])
       i = j
-  return output
-
+  return ''.join(output)
 
 assert compress('ccaaatsss') == '2c3at3s'
 assert compress('ssssbbz') == '4s2bz'
