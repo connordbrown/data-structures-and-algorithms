@@ -1,4 +1,5 @@
 def max_value(nums):
+  # set max to lowest possible value
   max = float('-inf')
   
   for num in nums:

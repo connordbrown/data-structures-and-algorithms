@@ -6,8 +6,10 @@ def uncompress(s):
     if s[j].isnumeric():
        j += 1
     else:
+      # multiple number by letter, append to output
       output.append(int(s[i:j]) * s[j])
       j += 1
+      # advance i to j to restart cycle
       i = j
       
   return ''.join(output)

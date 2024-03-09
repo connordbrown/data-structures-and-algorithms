@@ -1,8 +1,10 @@
 from math import sqrt, floor
 
 def is_prime(n):
+  # not prime by default
   if n < 2:
     return False
+  # sqrt is inflection point for factors
   for i in range(2, floor(sqrt(n)) + 1):
     if n % i == 0:
       return False

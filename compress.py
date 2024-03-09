@@ -4,14 +4,18 @@ def compress(s):
   j = 0 # count
   output = []
   while (j < len(s)):
+    # if duplicate value
     if s[j] == s[i]:
       j += 1
     else:
+      # one instance of character
       if j - i == 1:
         output.append(s[i])
+      # multiple instances of character
       else:
-        output.append(str(j - i))
-        output.append(s[i])
+        output.append(str(j - i)) # count
+        output.append(s[i]) # character
+      # advance i to equal j to start next count
       i = j
   return ''.join(output)
 
