@@ -11,6 +11,11 @@ def sum_list(head):
     current = current.next
   return sum
 
+# def sum_list(head):
+#   if head is None:
+#     return 0
+#   return head.val + sum_list(head.next)
+
 # test_01
 a = Node(2)
 b = Node(8)
