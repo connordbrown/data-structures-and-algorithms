@@ -13,6 +13,13 @@ def reverse_list(head):
     current = next
   return prev
 
+# def reverse_list(head, prev = None):
+#   if head is None:
+#     return prev
+#   next = head.next
+#   head.next = prev
+#   return reverse_list(next, head)
+
 # test_01
 a = Node("a")
 b = Node("b")
