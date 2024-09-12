@@ -33,6 +33,7 @@ def merge(left_arr, right_arr, a):
     
     return counter
     
+    
 def mergesort(a):
     # return once a has been divided into small enough pieces
     if len(a) <= 1:
