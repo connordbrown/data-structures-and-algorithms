@@ -6,9 +6,6 @@ def merge(left_arr, right_arr, a):
     m = len(left_arr)
     n = len(right_arr)
     
-    # counter for number of comparisons
-    counter = 0
-    
     # add elements of left_arr and right_arr to a according to element size
     while i < m and j < n:
         if left_arr[i] < right_arr[j]:
@@ -18,7 +15,6 @@ def merge(left_arr, right_arr, a):
             a[k] = right_arr[j]
             j += 1
         k += 1
-        counter += 1
 
     # when all elements are traversed in either left_arr or right_arr, add remaining elements of other array
     while i < m:
@@ -30,8 +26,6 @@ def merge(left_arr, right_arr, a):
         a[k] = right_arr[j]
         j += 1
         k += 1
-    
-    return counter
     
 
 def mergesort(a):
@@ -49,10 +43,8 @@ def mergesort(a):
     mergesort(right_arr)
     
     # join halves together in array a
-    merge_comparisons = merge(left_arr, right_arr, a)
+    merge(left_arr, right_arr, a)
     
-    return merge_comparisons
-
 
 test_cases = [ 
         [9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
