@@ -3,6 +3,7 @@ n = 65
 r = len(v) - 1
 
 def change(n, v, r):
+    """ returns histogram of coins required to get change for initial value n """
     d = [0, 0, 0, 0]
     k = 0    
     while n > 0:
