@@ -1,3 +1,11 @@
+# NOTE: Most "real" implementations of quicksort are careful in the selection of the pivot.
+# The most popular technique involves selecting the median of three values as the pivot and
+#  then swapping it with the first or last element and then beginning the partitioning algorithm.
+
+# 1. Select the first, middle, and last elements from the array
+# 2. Find the median of those three elements
+# 3. Use the median as the pivot 
+
 def swap(a, m, n):
     temp = a[m]
     a[m] = a[n]

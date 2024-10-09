@@ -1,5 +1,5 @@
 v = [25, 10, 5, 1]
-n = 65
+n = 100
 r = len(v) - 1
 
 def change(n, v, r):
