@@ -7,10 +7,13 @@ def change(n, v, r):
     d = [0, 0, 0, 0]
     k = 0    
     while n > 0:
+        # find coin smaller than amount
         while k < r and v[k] > n:
             k = k + 1
+        # cannot make change
         if v[k] > n:
             return 'no solution'
+        # increase number of given coin, subtract value from amount
         else:
             d[k] += 1
             n -= v[k]
