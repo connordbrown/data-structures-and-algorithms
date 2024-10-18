@@ -34,7 +34,7 @@ def mergesort(a):
         return
 
     # divide a in half, create two subarrays left_arr and right_arr
-    mid = len(a)//2
+    mid = len(a) // 2
     left_arr = a[:mid]
     right_arr = a[mid:]
 
