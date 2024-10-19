@@ -34,19 +34,21 @@ def heapify(arr):
   for i in range(n // 2 - 1, -1, -1):
     bubble_down(arr, i, n)
 
+def extract_max(arr):
+    """Given a heap a, extract_max(a) will swap the root with the last child of the heap, then fix the heap"""
+    n = len(arr)
+    # extract elements one by one - exclude extracted elements from next iteration (sorting in place)
+    for i in range(n - 1, 0, -1):
+        # swap max element to end of array and decrement index recursively
+        arr[i], arr[0] = arr[0], arr[i]
+        bubble_down(arr, 0, i)
 
 def heapsort(arr):
   """Sorts the given array using heapsort."""
-  n = len(arr)
-
   # build a max heap
   heapify(arr)
-
-  # extract elements one by one
-  for i in range(n - 1, 0, -1):
-    # swap max element to end of array and decrement index recursively
-    arr[i], arr[0] = arr[0], arr[i]
-    bubble_down(arr, 0, i)
+  # extract elements in sorted order
+  extract_max(arr)
 
 test_cases = [ 
         [9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
