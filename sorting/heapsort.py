@@ -1,5 +1,6 @@
 
-# MAX HEAP
+# MAX HEAP - current configuration
+# To implement MIN HEAP - reverse signs in bubble_up and bubble_down comparisons
 
 def bubble_up(arr, i):
   """Recursively bubbles up an element at index i in the array."""
@@ -54,6 +55,7 @@ test_cases = [
         [10, -10, 9, -9, 8, -8, 7, -7]
     ]
 
-a = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-heapsort(a)
-print(a)
+for test in test_cases:
+  expected_output = sorted(test)
+  heapsort(test)
+  assert test == expected_output
