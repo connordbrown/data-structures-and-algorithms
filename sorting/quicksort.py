@@ -24,7 +24,7 @@ def partition(a):
     j = 0
     
     # swap elements according to relationship with pivot
-    while (j < high):
+    while (j <= high):
         if a[j] < pivot:
             swap(a, i + 1, j)
             i = i + 1
