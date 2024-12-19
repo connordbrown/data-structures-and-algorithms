@@ -1,6 +1,6 @@
-
 # MAX HEAP - current configuration
 # To implement MIN HEAP - reverse signs in bubble_up and bubble_down comparisons
+# Base data structure - array/list
 
 def bubble_up(arr, i):
   """Recursively bubbles up an element at index i in the array."""
@@ -14,16 +14,23 @@ def bubble_up(arr, i):
 
 def bubble_down(arr, i, n):
   """Recursively bubbles down an element at index i in the array."""
-  left = 2 * i + 1
-  right = 2 * i + 2
+  # current/parent index
   largest = i
+  # left child of current index
+  left = 2 * i + 1
+  # right child of current index
+  right = 2 * i + 2
 
+  # if left child is bigger than current
   if left < n and arr[left] > arr[largest]:
     largest = left
 
+  # if right child is bigger than current
   if right < n and arr[right] > arr[largest]:
     largest = right
 
+  # if largest value is no longer parent, swap values
+  # and recursively call bubble_down on new largest value
   if largest != i:
     arr[i], arr[largest] = arr[largest], arr[i]
     bubble_down(arr, largest, n)
@@ -31,7 +38,7 @@ def bubble_down(arr, i, n):
 def heapify(arr):
   """Builds a max heap from the given array."""
   n = len(arr)
-  for i in range(n // 2 - 1, -1, -1):
+  for i in range(n // 2 - 1, -1, -1): # indices n // 2 - 1 have no children, so nothing happens
     bubble_down(arr, i, n)
 
 def extract_max(arr):
