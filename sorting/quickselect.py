@@ -13,7 +13,6 @@ def partition(a, l, r):
     # return pivot index
     return i + 1
 
-
 def quickselect(a, j):
     """ Get jth smallest value in an array in linear (if pivot is randomly/deterministically chosen) time."""
     l = 0
@@ -27,15 +26,13 @@ def quickselect(a, j):
     split_point = partition(a, l, r) 
     # if pivot is correct element, return it
     if split_point == r - j + 1:
-        result = a[split_point]
+        return a[split_point]
     # if element is to left of pivot, modify j and recursively call quickselect on left array
     elif split_point > r - j + 1:
-        result = quickselect(a[:split_point], j - (r - split_point + 1))
+        return quickselect(a[:split_point], j - (r - split_point + 1))
     # if element is to right of pivot, recursively call quickselect on right array
     else:
-        result = quickselect(a[split_point + 1: r + 1], j)
-
-    return result
+        return quickselect(a[split_point + 1: r + 1], j)
 
 
 test_cases = [ 
