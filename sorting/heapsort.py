@@ -51,7 +51,7 @@ def extract_max(arr):
         bubble_down(arr, 0, i)
 
 def heapsort(arr):
-  """Sorts the given array using heapsort."""
+  """Sorts the given array in place using heapsort."""
   # build a max heap
   heapify(arr)
   # extract elements in sorted order
