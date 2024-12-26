@@ -36,10 +36,59 @@ def minDrops(j, n):
         
     return min_drops
 
-#Test 1A
-assert minDrops(1, 9) == 2  # should be 2
-assert minDrops(1, 13) == 2 # should be 2
-assert minDrops(1, 19) == 4 # should be 4
-assert minDrops(1, 34) == 3 # should be 3
-assert minDrops(1, 43) == 5 # should be 5
 
+# 1B: Memoize the recurrence
+def minDrops_Memoize(n): 
+    # must return a number
+    # answer must coincide with recursive version
+    # assume that j = 1 is always the starting point.
+    
+    # possible growth lengths for different drops
+    drops = [1, 4, 5, 11]
+    
+    # create empty memo table - array of size (n + 1)
+    T = [None] * (n + 1)
+    
+    # call helper function
+    return _minDrops_Memoize(n, drops, T)
+
+def _minDrops_Memoize(length, drop_sizes, memo):
+    # base case - length already calculated
+    if memo[length] != None:
+        return memo[length]
+    
+    # base case - initial length
+    if length == 1:
+        return 0
+    
+    # base case - invalid stalk length
+    if length < 1:
+        return float('inf')
+    
+    min_drops = float('inf')
+    for drop in drop_sizes:
+        # add 1 for each drop used
+        num_drops = 1 + _minDrops_Memoize(length - drop, drop_sizes, memo)
+        # get minimum number of drops
+        min_drops = min(min_drops, num_drops)
+    
+    # put min_drops into memo table
+    memo[length] = min_drops
+
+    # return final minimum
+    return min_drops
+
+
+# Test 1A
+# assert minDrops(1, 9) == 2  # should be 2
+# assert minDrops(1, 13) == 2 # should be 2
+# assert minDrops(1, 19) == 4 # should be 4
+# assert minDrops(1, 34) == 3 # should be 3
+# assert minDrops(1, 43) == 5 # should be 5
+
+# Test 1B
+assert minDrops_Memoize(9) == 2  # should be 2
+assert minDrops_Memoize(13) == 2 # should be 2
+assert minDrops_Memoize(19) == 4 # should be 4
+assert minDrops_Memoize(34) == 3 # should be 3
+assert minDrops_Memoize(43) == 5 # should be 5
