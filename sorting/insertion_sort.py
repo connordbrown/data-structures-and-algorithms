@@ -1,12 +1,12 @@
 def insertion_sort(a):
-    for i in range(1, len(a)): # must start at 1
+    for i in range(1, len(a)): # i must start at 1, j must start at 0
         # for loop implementation
         # for j in range(i - 1, -1, -1):
         #     if a[j] > a[j + 1]:
         #         a[j], a[j + 1] = a[j + 1], a[j]
 
         # while loop implementation
-        j = i - 1 # can also do j = i, must alter swap variables
+        j = i - 1 # can also do j = i, must alter swap variables and while loop condition
         while j >= 0 and a[j] > a[j + 1]:
             a[j], a[j + 1] = a[j + 1], a[j]
             j = j - 1
