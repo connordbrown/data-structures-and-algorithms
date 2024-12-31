@@ -3,7 +3,6 @@
 # INPUT: [[1], [2], [0]] (a 3 node cycle)  
 # OUTPUT: [(0, (1, 6)), (1, (2, 5)), (2, (3, 4))]
     
-
 def dfs(a):
     # keep track of visited nodes
     visited = set()
