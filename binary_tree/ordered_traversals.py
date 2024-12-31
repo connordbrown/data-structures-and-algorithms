@@ -44,24 +44,6 @@ def preorderToTree(traversal):
     # return tree object with root value and attached subtrees
     return Tree(root, leftSubTree, rightSubTree)
 
-
-def inorderToTree(traversal):
-    # base case: list is empty - traversal is complete
-    if not traversal:
-        return None
-    
-    # get root node - root is the middle element in inorder traversal
-    mid = len(traversal) // 2
-    root = traversal[mid]
-
-    # recursively build left and right subtrees
-    leftSubTree = inorderToTree(traversal[:mid])
-    rightSubtree = inorderToTree(traversal[mid+1:]) # add 1 to not include root
-
-    # return tree object with root value and attached subtrees
-    return Tree(root, leftSubTree, rightSubtree)
-
-
 # preorderToTree tests
 test_cases = [ 
     ([5, 2, 1, 3, 7, 6, 8], Tree(5, Tree(2, Tree(1), Tree(3)), Tree(7, Tree(6), Tree(8)))),
@@ -73,17 +55,3 @@ test_cases = [
 for (test_traversal, tree) in test_cases:
     output = preorderToTree(test_traversal)
     assert output == tree
-
-
-# inorderToTree tests    
-test_cases = [ 
-    ([1, 2, 3, 5, 6, 7, 8], Tree(5, Tree(2, Tree(1), Tree(3)), Tree(7, Tree(6), Tree(8)))),
-    ([1, 2, 3, 4, 5], Tree(3, Tree(2, Tree(1, None, None), None), Tree(5, Tree(4, None, None), None))),
-    ([5, 6, 7, 8], Tree(7, Tree(6, Tree(5, None, None), None), Tree(8, None, None))),
-    ([3, 4, 5, 6, 7], Tree(5, Tree(4, Tree(3, None, None), None), Tree(7, Tree(6, None, None), None)))
-]
-
-for (test_traversal, tree) in test_cases:
-    output = inorderToTree(test_traversal)
-    assert output == tree
-    print(output)
