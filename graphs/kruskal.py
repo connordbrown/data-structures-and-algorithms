@@ -1,4 +1,4 @@
-# Input: An edge list with weights: [(0,1,1), (0,2,2),(1,2,1)]
+# Input: An edge list with weights: [(0,1,1),(0,2,2),(1,2,1)]
 # Output: A minimum spanning tree in the form of an edge list with weights: [(0, 1, 1), (1, 2, 1)]
 
 # Note: Edge lists are lists of triples (i, j, w), with i < j, which represents an edge between nodes i and j with weight w. Edges are undirected in this notebook, and you should always return edges in the form (i, j, w), where i < j. Make sure to sort your final edge list in natural order, ie (0, 2, 1) before (1,2,1), (0,1,0) before (0,2,0).
