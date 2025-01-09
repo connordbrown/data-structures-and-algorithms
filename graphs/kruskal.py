@@ -14,7 +14,7 @@ def kruskal_unsorted(a):
     
     # create a set of vertices from edge list a
     vertices = {vertex for edge in a for vertex in edge[0:2]}
-    # create a disjoint-set dictionary with vertices as keys and sets of vertices as values
+    # create a disjoint-set dictionary with vertices as keys and SETS of vertices as values - beware similar syntax to dicts
     sets = {vertex: {vertex} for vertex in vertices}
     # initialize Minimal Spanning Tree (MST)
     mst = []
